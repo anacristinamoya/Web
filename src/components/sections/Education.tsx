@@ -1,3 +1,4 @@
+
 interface EducationItemProps {
   logo: string;
   title: string;
@@ -35,7 +36,7 @@ function EducationItem({
 
 export function Education() {
   return (
-    <section className="bg-gray-50 py-5">
+    <section className="bg-gray-50 py-5" id="education">
       <div className="container">
         <div className="flex flex-col items-center">
           <div className="bg-gray-200 px-5 py-1 rounded-xl text-sm text-gray-600 font-medium">
