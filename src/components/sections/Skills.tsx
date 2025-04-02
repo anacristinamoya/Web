@@ -1,6 +1,7 @@
+
 export function Skills() {
   return (
-    <section className="bg-white py-5">
+    <section className="bg-white py-5" id="skills">
       <div className="container">
         <div className="flex flex-col items-center">
           <div className="bg-gray-200 px-5 py-1 rounded-xl text-sm text-gray-600 font-medium">
