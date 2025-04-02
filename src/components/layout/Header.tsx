@@ -39,7 +39,14 @@ export function Header() {
             <Moon className="h-6 w-6" />
           </Button>
 
-          <Button className="bg-gray-900 text-gray-50">Download CV</Button>
+          <a 
+            href="https://github.com/anacristinamoya/Porfolio/raw/main/PM_Ana_Cristina_Moya.pdf" 
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-gray-900 text-gray-50">Download CV</Button>
+          </a>
         </nav>
       </div>
     </header>
