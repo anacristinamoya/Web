@@ -12,10 +12,10 @@ export function Header() {
 
         <nav className="flex items-center gap-6">
           <a href="#about" className="text-base text-gray-600 font-medium">
-            About me
+            About
           </a>
           <a href="#skills" className="text-base text-gray-600 font-medium">
-            Skills & tools
+            Skills
           </a>
           <a
             href="#experience"
@@ -27,10 +27,10 @@ export function Header() {
             href="#education"
             className="text-base text-gray-600 font-medium"
           >
-            Education / Certification
+            Education
           </a>
           <a href="#contact" className="text-base text-gray-600 font-medium">
-            Get in touch
+            Contact
           </a>
 
           <div className="h-6 border-l border-gray-100" />
