@@ -4,7 +4,15 @@ export function Hero() {
   return (
     <section className="bg-white py-24">
       <div className="container">
-        <div className="flex gap-12 flex-wrap">
+        <div className="flex gap-12 flex-wrap md:flex-row-reverse">
+          <div className="flex-1 min-w-96">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8becb8f2cddca1d792ba40fbd6d00146ca9c4dc3?placeholderIfAbsent=true"
+              alt="Ana Cristina Moya"
+              className="w-[400px] max-w-full rounded-[500px] aspect-square object-cover"
+            />
+          </div>
+
           <div className="flex flex-col max-w-screen-md">
             <div className="flex flex-col">
               <h2 className="text-gray-900 text-6xl font-bold leading-[1.2] tracking-[-1.2px]">
@@ -59,14 +67,6 @@ export function Hero() {
                 <span>+57 301 7864054</span>
               </div>
             </div>
-          </div>
-
-          <div className="flex-1 min-w-96">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8becb8f2cddca1d792ba40fbd6d00146ca9c4dc3?placeholderIfAbsent=true"
-              alt="Ana Cristina Moya"
-              className="w-[400px] max-w-full rounded-[500px] aspect-square object-cover"
-            />
           </div>
         </div>
       </div>
