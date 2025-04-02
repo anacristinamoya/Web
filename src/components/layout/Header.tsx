@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Moon } from "lucide-react";
 
@@ -13,14 +14,20 @@ export function Header() {
           <a href="#about" className="text-base text-gray-600 font-medium">
             About
           </a>
-          <a href="#work" className="text-base text-gray-600 font-medium">
-            Work
+          <a href="#skills" className="text-base text-gray-600 font-medium">
+            Skills
           </a>
           <a
-            href="#testimonials"
+            href="#experience"
             className="text-base text-gray-600 font-medium"
           >
-            Testimonials
+            Experience
+          </a>
+          <a
+            href="#education"
+            className="text-base text-gray-600 font-medium"
+          >
+            Education
           </a>
           <a href="#contact" className="text-base text-gray-600 font-medium">
             Contact
