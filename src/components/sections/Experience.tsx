@@ -15,7 +15,7 @@ function ExperienceItem({
   return (
     <div className="shadow-[0px_4px_3px_0px_rgba(0,0,0,0.07),0px_2px_2px_0px_rgba(0,0,0,0.06)] bg-white p-8 rounded-xl">
       <div className="flex gap-8 flex-wrap">
-        <div className="w-[116px]">
+        <div className="w-[80px]">
           <img src={logo} alt={title} className="w-full" />
         </div>
 
