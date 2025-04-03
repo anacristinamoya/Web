@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Moon } from "lucide-react";
+import { Moon, Download } from "lucide-react";
 
 export function Header() {
   return (
@@ -45,7 +45,10 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-gray-900 text-gray-50">Download CV</Button>
+            <Button className="bg-gray-900 text-gray-50 flex items-center gap-2">
+              <Download className="h-4 w-4" />
+              Download CV
+            </Button>
           </a>
         </nav>
       </div>
