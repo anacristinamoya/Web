@@ -1,3 +1,4 @@
+
 interface ExperienceItemProps {
   logo: string;
   title: string;
@@ -98,12 +99,17 @@ export function Experience() {
           <ExperienceItem
             logo="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true"
             title="Go to Market and Content Manager"
-            period="May 2019 - Nov 2020"
+            period="Mar 2016 - Nov 2020"
             description={
               <>
                 <p>
                   Executed comprehensive go-to-market plans for 10 products,
-                  including smartphones, tablets, and wearable devices
+                  including smartphones, tablets, and wearable devices. I led the 
+                  development of programs, strategic services, and benefits for 
+                  mobile devices to drive sales, offering value, affordability, 
+                  and differentiation. This encompassed the entire product lifecycle, 
+                  from market research, supplier negotiation, and product strategy 
+                  to marketing communication and sales force training.
                 </p>
                 <br />
                 <ul className="list-disc pl-5">
@@ -119,27 +125,6 @@ export function Experience() {
                     departments, and reduced launch times and process
                     uncertainty.
                   </li>
-                </ul>
-              </>
-            }
-          />
-
-          <ExperienceItem
-            logo="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true"
-            title="App Store Content Manager"
-            period="Mar 2016 - Apr 2019"
-            description={
-              <>
-                <p>
-                  Led the development of programs, strategic services, and
-                  benefits for mobile devices to drive sales, offering value,
-                  affordability, and differentiation. This encompassed the
-                  entire product life-cycle, from market research, supplier
-                  negotiation, and product strategy to marketing communication
-                  and sales force training.
-                </p>
-                <br />
-                <ul className="list-disc pl-5">
                   <li>
                     <strong>Trade-in (2018 - 2020): </strong>
                     Implemented a program that allowed customers to exchange
@@ -155,12 +140,12 @@ export function Experience() {
 
           <ExperienceItem
             logo="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true"
-            title="App Store Content Supervisor / Assistant Manager"
+            title="App Store Content Assistant Manager / Supervisor"
             period="Jun 2010 - Feb 2016"
             description={
               <>
                 <p>
-                  I led the development of applications for Samsung devices,
+                  Led the development of applications for Samsung devices,
                   covering everything from market research and product strategy
                   to design, prioritization, marketing communication, budget,
                   and contracts.
@@ -169,10 +154,13 @@ export function Experience() {
                 <ul className="list-disc pl-5">
                   <li>
                     <strong>Samsung Concierge Application (2015-2016): </strong>
-                    Loyalty App where Premium customers receive exclusive
-                    benefits such as 24/7 agents to support their device's
-                    questions and technical issues via chat/call. Salesforce
-                    integration. Increase Premium sales. Best LATAM case.
+                    Developed the loyalty application for Premium customers, which 
+                    offered exclusive benefits, such as 24/7 agent support for 
+                    resolving technical problems via chat or call. This application 
+                    was integrated with Salesforce, significantly increasing Premium 
+                    sales, with a 30% customer adoption rate, and was recognized as 
+                    the best implementation in Latin America. Project management 
+                    tools were utilized.
                   </li>
                   <li>
                     <strong>Application Ecosystem (2010 – 2015): </strong>
@@ -196,9 +184,9 @@ export function Experience() {
 
           <ExperienceItem
             logo="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true"
-            title="Project Manager for Latin America"
+            title="Account Manager / Mobile Product Designer"
             period="Jan 2005 - Oct 2008"
-            description="Roles: Account manager (2008), Mobile Product Designer (2007), Mobile Department Chief (2006– 2007), Senior Mobile Developer (2006), Junior Mobile Developer (2005)."
+            description="Positions: Account manager (2008), Mobile Product Designer (2007), Mobile Department Chief (2006– 2007), Senior Mobile Developer (2006), Junior Mobile Developer (2005)."
           />
         </div>
       </div>
