@@ -40,7 +40,7 @@ export function Header() {
           </Button>
 
           <a 
-            href="https://github.com/anacristinamoya/ProductManagerCV/raw/main/PM_Ana_Cristina_Moya.pdf" 
+            href="https://github.com/anacristinamoya/ProductManagerCV/blob/main/PM_Ana_Cristina_Moya.pdf" 
             download
             target="_blank"
             rel="noopener noreferrer"
