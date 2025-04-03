@@ -1,15 +1,976 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lovable Project</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Cristina Moya - Product Manager</title>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    
+    body {
+      background-color: white;
+      color: #333;
+      line-height: 1.5;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .underline {
+      text-decoration: underline;
+    }
+    
+    /* Header styles */
+    header {
+      background-color: white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0);
+      padding: 1rem 0;
+    }
+    
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #222;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    
+    nav a {
+      font-weight: 500;
+      color: #666;
+    }
+    
+    nav .divider {
+      height: 24px;
+      width: 1px;
+      background-color: #eee;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: #222;
+      color: white;
+    }
+    
+    .btn-ghost {
+      background-color: transparent;
+      padding: 0.5rem;
+    }
+    
+    /* Hero section */
+    .hero {
+      background-color: white;
+      padding: 6rem 0;
+    }
+    
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #222;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-image {
+      text-align: center;
+    }
+    
+    .hero-image img {
+      width: 400px;
+      max-width: 100%;
+      border-radius: 500px;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+    
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+    }
+    
+    .contact-links {
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+    
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+    
+    section.bg-gray {
+      background-color: #f9fafb;
+    }
+    
+    .section-title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-tag {
+      background-color: #e5e7eb;
+      padding: 0.25rem 1.25rem;
+      border-radius: 0.75rem;
+      font-size: 0.875rem;
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: #666;
+      text-align: center;
+      max-width: 36rem;
+      margin-top: 1rem;
+    }
+    
+    /* About section */
+    .about-content {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 420px;
+      max-width: 532px;
+    }
+    
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 1.33;
+      object-fit: cover;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 420px;
+      max-width: 632px;
+    }
+    
+    .about-text h3 {
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Skills section */
+    .skills-content {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .skills-column {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .skills-column h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .skills-column ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      color: #666;
+    }
+    
+    .skills-column li {
+      margin-bottom: 0.25rem;
+    }
+    
+    /* Experience & Education */
+    .card {
+      background-color: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 3px rgba(0, 0, 0, 0.07), 0 2px 2px rgba(0, 0, 0, 0.06);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .card-content {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .card-logo {
+      width: 116px;
+    }
+    
+    .card-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 1rem;
+    }
+    
+    .card-description {
+      color: #666;
+    }
+    
+    .card-period {
+      color: #444;
+      min-width: 100px;
+    }
+    
+    .card-description ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin-top: 1rem;
+    }
+    
+    .card-description li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Contact section */
+    .contact {
+      padding: 6rem 0;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .contact-text {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: #222;
+    }
+    
+    .copy-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: #666;
+      font-size: 0.875rem;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f9fafb;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #666;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">Ana Cristina Moya</h1>
+      
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        
+        <div class="divider"></div>
+        
+        <button class="btn btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </button>
+        
+        <a href="https://github.com/anacristinamoya/ProductManagerCV/raw/main/PM_Ana_Cristina_Moya.pdf" class="btn btn-primary" download target="_blank" rel="noopener noreferrer">Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-container">
+        <div>
+          <h1>Hi, I'm Ana Cristina 👋</h1>
+          <p>
+            I'm a results-driven <strong>Product Manager</strong> with 19
+            years of experience. Possesses technical expertise as an
+            Electronic and Telecommunications Engineer, complemented by the
+            strategic and business insights of a Master of Marketing. Proven
+            ability to translate market needs and data analysis into
+            innovative solutions, consistently generating value and
+            increasing sales through successful product development and
+            project management. Expertise in collaborating with
+            cross-functional teams to lead all stages of the product life
+            cycle, from market research and strategic planning to
+            development, deployment, and go-to-market execution.
+          </p>
+          
+          <div style="margin-top: 3rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; color: #666;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Cali, Colombia</span>
+            </div>
+            
+            <div class="availability">
+              <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                <div class="availability-dot"></div>
+              </div>
+              <span style="color: #666;">Available for new job opportunities</span>
+            </div>
+          </div>
+          
+          <div class="contact-links">
+            <div class="contact-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span class="underline">ana-cristina-moya</span>
+            </div>
+            <span class="underline">anacristina.moya@gmail.com</span>
+            <span>+57 301 7864054</span>
+          </div>
+        </div>
+        
+        <div class="hero-image">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8becb8f2cddca1d792ba40fbd6d00146ca9c4dc3?placeholderIfAbsent=true" alt="Ana Cristina Moya">
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="bg-gray" id="about">
+      <div class="container">
+        <div class="section-title-container">
+          <div class="section-tag">About me</div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-image">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/92befcbbb340076a877457880148db974d1b4a15?placeholderIfAbsent=true" alt="About">
+          </div>
+          
+          <div class="about-text">
+            <h3>Curious about me? Here you have it:</h3>
+            <p>
+              I am an electronic and telecommunications engineer with a
+              master's in marketing, which gives me a perfect combination of
+              technical and marketing knowledge. The last 19 years in the
+              product industry have given me a deep understanding of the
+              entire product life cycle, from product ideation, and market
+              research to go-to-market strategy.
+            </p>
+            <br>
+            <p>
+              I've generated value and increased sales throughout my career
+              through successful product development and project management.
+              My experience at adidas, as a Product Owner for the e-Commerce
+              back end, allowed me to collaborate effectively with
+              cross-functional teams, from different regions, manage complex
+              initiatives, and deliver results in an agile environment.
+              Additionally, my prior roles at Samsung exposed me to the
+              dynamic world of mobile applications and services and reinforced
+              my ability to understand customer needs and translate them into
+              successful products.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-title-container">
+          <div class="section-tag">Skills & tools</div>
+          <div class="section-subtitle">The skills and tools I am really good at:</div>
+        </div>
+        
+        <div class="skills-content">
+          <div class="skills-column">
+            <h3>Skills:</h3>
+            <ul>
+              <li>Scrum Master</li>
+              <li>Agile Methodologies</li>
+              <li>Project Management</li>
+              <li>Product Management</li>
+              <li>Alliance Management</li>
+              <li>Product Owner</li>
+              <li>Data Analysis</li>
+              <li>Marketing</li>
+              <li>RoadmapMobile Applications</li>
+              <li>Stakeholder Management Technical Background</li>
+              <li>Accountable</li>
+              <li>Storytelling</li>
+              <li>Adaptability</li>
+            </ul>
+          </div>
+          
+          <div class="skills-column">
+            <h3>Tools:</h3>
+            <ul>
+              <li>Figma</li>
+              <li>Miro</li>
+              <li>Jira</li>
+              <li>Confluence</li>
+              <li>Kibana</li>
+              <li>Excel for Data Science</li>
+              <li>Power BI</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section class="bg-gray" id="experience">
+      <div class="container">
+        <div class="section-title-container">
+          <div class="section-tag">Experience</div>
+          <div class="section-subtitle">Here is a quick summary of my Job Experience:</div>
+        </div>
+        
+        <!-- adidas Experience -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e7e04ad17fcad3bceaa64fb9b8b0f44bd20e61de?placeholderIfAbsent=true" alt="adidas logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Product Owner Order Processing / Order to Consumer</h3>
+              <div class="card-description">
+                <p>
+                  Created measurable value in the adidas eCommerce backend
+                  platform by addressing market opportunities and customer
+                  needs, optimizing processes using tools such as Jira,
+                  Confluence, and Miro. I managed the implementation of various
+                  initiatives throughout their lifecycle, collaborating with
+                  Agile experts and engineers to build a high-performance team.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Brazil New Warehouse (2023): </strong>
+                    Implemented changes to electronic invoicing integration,
+                    facilitating the integration of the Global Omnichannel
+                    platform with a new warehouse in Brazil, covering
+                    functionalities such as Returns, Split Shipments, and
+                    Delivery Exceptions. This contributed to a reduction in tax
+                    costs and an expected increase in net sales of €4.3M during
+                    the first year.
+                  </li>
+                  <li>
+                    <strong>LAM Personalization (2022): </strong>
+                    Developed warehouse integration to identify personalized
+                    orders and implemented adaptations to electronic invoicing,
+                    enabling the deployment of this functionality in the
+                    eCommerce of LATAM countries. This initiative allowed Latin
+                    America to achieve a 31% share of net sales in World Cup
+                    products, compared to global sales.
+                  </li>
+                  <li>
+                    <strong>Brazil Roll out (2021 - 2022): </strong>
+                    Executed the implementation of deviations from the global
+                    eCommerce model during the deployment of the Omnichannel
+                    platform in Brazil, including the activation of offline
+                    payments, installment payments, electronic invoice
+                    calculation and generation, and error management. This
+                    implementation generates 2.3 million invoices annually.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="card-period">May 2021- Jan 2025</div>
+          </div>
+        </div>
+        
+        <!-- Samsung GTM Experience -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true" alt="Samsung logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Go to Market and Content Manager</h3>
+              <div class="card-description">
+                <p>
+                  Executed comprehensive go-to-market plans for 10 products,
+                  including smartphones, tablets, and wearable devices. I led the 
+                  development of programs, strategic services, and benefits for 
+                  mobile devices to drive sales, offering value, affordability, 
+                  and differentiation. This encompassed the entire product lifecycle, 
+                  from market research, supplier negotiation, and product strategy 
+                  to marketing communication and sales force training.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Product Go to Market: </strong>
+                    Developed detailed strategies and coordinated with
+                    cross-functional teams to align objectives and manage
+                    project execution, identifying and mitigating risks. I
+                    utilized project management tools to ensure compliance with
+                    deadlines set by executives. As a result, I achieved the
+                    successful launch of all products within the established
+                    timeframe, increased collaboration among different
+                    departments, and reduced launch times and process
+                    uncertainty.
+                  </li>
+                  <li>
+                    <strong>Trade-in (2018 - 2020): </strong>
+                    Implemented a program that allowed customers to exchange
+                    their old phones for discounts on the purchase of new
+                    devices. This program was integrated with financing options
+                    and offered up to a 50% discount, successfully boosting, for
+                    example, 46% of the Galaxy Note20 sales at launch.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="card-period">Mar 2016 - Nov 2020</div>
+          </div>
+        </div>
+        
+        <!-- Samsung App Store Experience -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true" alt="Samsung logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">App Store Content Assistant Manager / Supervisor</h3>
+              <div class="card-description">
+                <p>
+                  Led the development of applications for Samsung devices,
+                  covering everything from market research and product strategy
+                  to design, prioritization, marketing communication, budget,
+                  and contracts.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Samsung Concierge Application (2015-2016): </strong>
+                    Developed the loyalty application for Premium customers, which 
+                    offered exclusive benefits, such as 24/7 agent support for 
+                    resolving technical problems via chat or call. This application 
+                    was integrated with Salesforce, significantly increasing Premium 
+                    sales, with a 30% customer adoption rate, and was recognized as 
+                    the best implementation in Latin America. Project management 
+                    tools were utilized.
+                  </li>
+                  <li>
+                    <strong>Application Ecosystem (2010 – 2015): </strong>
+                    Created a developer ecosystem that produced more than 100
+                    applications for Smartphones, Tablets, TVs, Wearable
+                    devices, and Gear VR devices, generating value and
+                    differentiation for Samsung consumers. Project management
+                    tools were utilized.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="card-period">Jun 2010 - Feb 2016</div>
+          </div>
+        </div>
+        
+        <!-- Project Manager Experience -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true" alt="Atchik logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Project Manager for Latin America</h3>
+              <div class="card-description">
+                Manage the implementation of Chat Ideas Web, SMS, and SAT (SIM Browsing) platforms for Latin American countries.
+              </div>
+            </div>
+            
+            <div class="card-period">Nov 2008 - Jun 2010</div>
+          </div>
+        </div>
+        
+        <!-- Account Manager Experience -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a477b93d5257efdef845dffb56f8d5a501a27e8?placeholderIfAbsent=true" alt="Dasigno logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Account Manager / Mobile Product Designer</h3>
+              <div class="card-description">
+                Positions: Account manager (2008), Mobile Product Designer (2007), Mobile Department Chief (2006– 2007), Senior Mobile Developer (2006), Junior Mobile Developer (2005).
+              </div>
+            </div>
+            
+            <div class="card-period">Jan 2005 - Oct 2008</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section class="bg-gray" id="education">
+      <div class="container">
+        <div class="section-title-container">
+          <div class="section-tag">Education / Certification</div>
+          <div class="section-subtitle">Here my Education and Certification details.</div>
+        </div>
+        
+        <!-- Data Science Education -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/85abb6ab57c5804f6987eafc3e1d83ba22eec606?placeholderIfAbsent=true" alt="Education logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">DATA SCIENCE FOR BUSINESS MANAGERS</h3>
+              <div class="card-description">
+                <p>
+                  This intensive training equipped me with practical skills in
+                  data analysis, machine learning, and visualization tools like
+                  Python, Power BI, SQL, and advanced Excel techniques.
+                </p>
+                <br>
+                <p>
+                  It was an honor to learn from Professor Peter Lou, He
+                  demonstrated a strong passion for the subject matter. He was
+                  always motivated to learn cutting-edge tools and expand the
+                  capabilities of AI in our daily assignments, always open to
+                  solving our questions in our live classes, with incredible
+                  guest speakers!
+                </p>
+                <br>
+                <strong>Key takeaways:</strong>
+                <br>
+                • Mastered essential tools: From advanced Excel, Power BI, and
+                SQL to Python programming and machine learning libraries, I
+                gained hands-on experience with the data science toolkit.
+                <br>
+                • Bridging the gap: I learned to effectively collaborate with
+                data scientists and engineers to translate data insights into
+                actionable business strategies.
+                <br>
+                <br>
+                My favorite part was our final project, where we analyzed the
+                Financial Performance of Companies from the S&P500, cleaned the
+                data, and created a Machine Learning model to predict whether to
+                buy, sell, or hold the stocks with the given data.
+              </div>
+            </div>
+            
+            <div class="card-period">Oct - Dec 2024</div>
+          </div>
+        </div>
+        
+        <!-- Product Management Education -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/85abb6ab57c5804f6987eafc3e1d83ba22eec606?placeholderIfAbsent=true" alt="Education logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Fundamentals of Product Management</h3>
+              <div class="card-description">
+                <p>
+                  This is a unique experience to know more in detail all the
+                  tasks and processes of the role as Product Manager.
+                </p>
+                <br>
+                <p>
+                  The best part of this course was to have the opportunity to
+                  participate in our class project. Our team's name was 24x7 as
+                  we were located in Germany, the USA, Brazil, and Colombia. It
+                  was a wonderful opportunity to work with these amazing people
+                  with high skills, in different time zones, who came together
+                  to create an MVP. It will be difficult to find these great
+                  colleagues in a single company and working with this team was
+                  an honor to me!
+                </p>
+              </div>
+            </div>
+            
+            <div class="card-period">Jan - Mar 2021</div>
+          </div>
+        </div>
+        
+        <!-- Master of Marketing -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb0de67f6474cfd105a0251438e569f1a051c364?placeholderIfAbsent=true" alt="University logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Master of Marketing</h3>
+              <div class="card-description">
+                <p>
+                  I learned about marketing theory, according to the state of
+                  the art in the different subjects, and compare what I learned
+                  with practice through different pedagogical approaches, which
+                  allowed me to connect learning with my work environment.
+                </p>
+                <br>
+                <p>
+                  This program, consistent with the University and the Faculty,
+                  has an explicit commitment to the training of leaders who
+                  promote sustainable innovation processes in organizations and
+                  that have a positive impact on all areas of society.
+                </p>
+              </div>
+            </div>
+            
+            <div class="card-period">2015 - 2017</div>
+          </div>
+        </div>
+        
+        <!-- Engineering Degree -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/834629a515e6a48b0486053436dd8ad281365ba3?placeholderIfAbsent=true" alt="University logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Electronic and Telecommunication Engineer</h3>
+            </div>
+            
+            <div class="card-period">1998 - 2004</div>
+          </div>
+        </div>
+        
+        <!-- Scrum Master Certificate -->
+        <div class="card">
+          <div class="card-content">
+            <div class="card-logo">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6329021eeb284b527cf6878d6bf79fc55d57634d?placeholderIfAbsent=true" alt="Certification logo">
+            </div>
+            
+            <div class="card-info">
+              <h3 class="card-title">Scrum Master Professional Certificate - SMPC</h3>
+            </div>
+            
+            <div class="card-period">2018 & 2020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title-container">
+          <div class="section-tag">Get in touch</div>
+          <div class="section-subtitle">
+            What's next? Feel free to reach out to me if you're looking for a
+            developer, have a query, or simply want to connect.
+          </div>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <img 
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/45bc1ad789be1568472b47e14b44d3b2d104e7a0?placeholderIfAbsent=true" 
+              alt="Email"
+              class="contact-icon"
+            >
+            <span class="contact-text">anacristina.moya@gmail.com</span>
+            <button class="copy-btn" onclick="copyToClipboard('anacristina.moya@gmail.com')">Copy</button>
+          </div>
+          
+          <div class="contact-item">
+            <img 
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f0a57de2a4334db632f345e800f0e81ba025a77?placeholderIfAbsent=true" 
+              alt="Phone"
+              class="contact-icon"
+            >
+            <span class="contact-text">+57 3017864054</span>
+            <button class="copy-btn" onclick="copyToClipboard('+57 3017864054')">Copy</button>
+          </div>
+          
+          <div class="contact-item">
+            <img 
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/34e0410cf06da025bf8c467859880db133ba863f?placeholderIfAbsent=true" 
+              alt="LinkedIn"
+              class="contact-icon"
+            >
+            <span class="contact-text">ana-cristina-moya</span>
+            <button class="copy-btn" onclick="copyToClipboard('ana-cristina-moya')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/01584017ec777a342250fa61a3346a7681bcdb2e?placeholderIfAbsent=true"
+          alt="Copyright"
+          width="16"
+          height="16"
+        >
+        <div>
+          <span>2023 | </span>
+          <a
+            href="https://www.figma.com/@shahsagarm"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Designed
+          </a>
+          <span> and </span>
+          <a
+            href="https://github.com/shahsagarm/sagarshah.dev"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            coded
+          </a>
+          <span> with </span>
+          <span style="color: #ef4444;">❤</span>
+          <span>️️ by Sagar Shah</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Function to handle copying text to clipboard
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          const btn = event.target;
+          const originalText = btn.textContent;
+          btn.textContent = "Copied!";
+          setTimeout(() => {
+            btn.textContent = originalText;
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+          alert('Failed to copy text. Please try again.');
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
 </html>
